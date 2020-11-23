@@ -1,4 +1,4 @@
-# AmazingPi
+![AmazingPi](logo.jpg?raw=true "AmazingPi")
 
 This is our ESPRG present to Allan, the best manager that Microsoft office in Prague has ever seen. 
 
