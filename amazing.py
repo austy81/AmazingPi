@@ -4,11 +4,6 @@ import time
 from os import listdir
 from os.path import isfile, join
 
-samplesDir = 'samples'
-onlyfiles = [f for f in listdir(mypath) if isfile(join(samplesDir, f))]
-print(onlyfiles)
-return
-
 GPIO.setmode(GPIO.BOARD)
 buttonPin = 3
 
