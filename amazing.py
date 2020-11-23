@@ -1,8 +1,9 @@
 import RPi.GPIO as GPIO
 from pygame import mixer
 import time
-from os import listdir
-from os.path import isfile, join
+import os
+#from os import listdir
+#from os.path import isfile, join
 
 GPIO.setmode(GPIO.BOARD)
 buttonPin = 3
@@ -10,7 +11,12 @@ buttonPin = 3
 GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 mixer.init()
-sound = mixer.Sound('samples/test.wav')
+
+
+full_path = os.path.dirname(os.path.realpath(__file__))
+wav = os.path.join(full_path,'samples','test.wav')
+
+sound = mixer.Sound(wav)
 
 prev_state = True
 while True:
