@@ -13,8 +13,18 @@ GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 mixer.init()
 
 
-full_path = os.path.dirname(os.path.realpath(__file__))
-wav = os.path.join(full_path,'samples','test.wav')
+script_path = os.path.dirname(os.path.realpath(__file__))
+samples_dir = os.path.join(script_path,'samples')
+samples_list = []
+wav = os.path.join(samples_dir,'test.wav')
+
+#  traverse samples directory and add all audio samples to list
+for dir_name, subdir_list, file_list in os.walk(samples_dir):
+    print('Found directory: %s' % dir_name)
+    for file_name in file_list:
+        if file_name.endswith(('.wav','.mp4')):
+            print('\t%s' % file_name)
+            samples_list.append(os.path.join(dir_name, file_name))
 
 sound = mixer.Sound(wav)
 
