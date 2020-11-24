@@ -6,6 +6,7 @@ This project serves as a proof of Allan's bestness - he managed to create such a
 
 Clone repository to Raspberry Pi by running this in home directory:
 git clone https://github.com/austy81/AmazingPi.git
+chmod +x ./start_amazing.sh
 
 # How to schedule to run Amazing application on startup?
 ```
