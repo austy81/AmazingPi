@@ -3,10 +3,9 @@ import time
 
 import player
 
-GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
-GPIO.ignorewarnin
 buttonPin = 3
+GPIO.setwarnings(False)
 GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 prev_state = True
