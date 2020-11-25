@@ -11,7 +11,9 @@ answers_dir = os.path.join(script_path, 'samples', 'answers')
 
 def get_random_file(dir_path):
     audio_files = ["%s/%s" % (dir_path,f) for f in os.listdir(dir_path) if f.endswith('.wav') or f.endswith('.mp3')]
-    return random.choice(audio_files)
+    selected_file = random.choice(audio_files)
+    print "Selected file %s" % (selected_file) 
+    return selected_file
 
 
 pygame.mixer.init()

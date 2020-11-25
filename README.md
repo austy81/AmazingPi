@@ -19,5 +19,5 @@ chmod +x /home/pi/AmazingPi/start_amazing.sh
 # Run Amazing application on Raspberry startup
 ```
 sudo crontab -e
-@reboot /home/pi/AmazingPi/start_amazing.sh
+@reboot sh /home/pi/AmazingPi/start_amazing.sh >> /home/pi/AmazingPi.log 2>&1
 ```
