@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update repo
-git -C /home/pi/AmazingPi pull
+cd /home/pi/AmazingPi && git pull
 
 # Install requirements
 #pip install -r /home/pi/AmazingPi/requirements.txt
