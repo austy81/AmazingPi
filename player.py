@@ -26,3 +26,7 @@ def play():
 
     answer.play()
     time.sleep(answer.get_length())
+
+
+if __name__ == "__main__":
+    play()
