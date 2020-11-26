@@ -8,6 +8,8 @@ buttonPin = 3
 GPIO.setwarnings(False)
 GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
+print 'Ready to play...'
+
 prev_state = True
 while True:
     current_state = GPIO.input(buttonPin)
