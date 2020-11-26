@@ -15,7 +15,7 @@ cd /home/pi && git clone https://github.com/austy81/AmazingPi.git
 sudo systemctl edit --force --full amazingPi.service
 ```
 
-Enter in fllowing content:
+Enter in following content:
 
 ```
 [Unit]
@@ -41,6 +41,12 @@ sudo systemctl enable amazingPi.service
 sudo systemctl start amazingPi.service
 ```
 
+# You can edit the unit-file and show it. After editing you must restart the service to take effect.
+```
+sudo systemctl edit --full amazingPi.service
+sudo systemctl restart amazingPi.service
+```
+
 # Update repo manually
 run
 ```
@@ -50,5 +56,5 @@ cd /home/pi/AmazingPi && git reset --hard && git pull
 # Alternatively use crontab to shcedule
 ```
 sudo crontab -e
-@reboot sh /home/pi/AmazingPi/start_amazing.sh >> /home/pi/AmazingPi.log 2>&1
+@reboot sh /home/pi/AmazingPi/start.sh
 ```
