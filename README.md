@@ -41,6 +41,12 @@ sudo systemctl enable amazingPi.service
 sudo systemctl start amazingPi.service
 ```
 
+# Update repo manually
+run
+```
+cd /home/pi/AmazingPi && git reset --hard && git pull
+```
+
 # Alternatively use crontab to shcedule
 ```
 sudo crontab -e
