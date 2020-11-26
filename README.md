@@ -27,7 +27,7 @@ After=network-online.target
 Type=simple
 User=pi
 WorkingDirectory=/home/pi
-ExecStart=sh /home/pi/AmazingPi/start_amazing.sh > /home/pi/AmazingPi.log
+ExecStart=sh /home/pi/AmazingPi/start.sh
 
 [Install]
 WantedBy=multi-user.target
