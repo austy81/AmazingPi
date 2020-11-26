@@ -53,7 +53,7 @@ run
 cd /home/pi/AmazingPi && git reset --hard && git pull
 ```
 
-# Alternatively use crontab to shcedule
+# Alternatively use crontab to schedule
 ```
 sudo crontab -e
 @reboot sh /home/pi/AmazingPi/start.sh
