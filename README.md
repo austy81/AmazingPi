@@ -8,19 +8,17 @@ This project serves as a proof of Allan's bestness - he managed to create such a
 # Clone repository
 Into Raspberry Pi home by running following commands.
 ```
-cd /home/pi
-git clone --depth 1 https://github.com/austy81/AmazingPi.git
+cd /home/pi && git clone https://github.com/austy81/AmazingPi.git
 ```
 
-# Run Amazing application on Raspberry startup
+# Start it after boot
 ```
-sudo crontab -e
-@reboot sh /home/pi/AmazingPi/start_amazing.sh >> /home/pi/AmazingPi.log 2>&1
-```
-
 sudo systemctl edit --force --full amazingPi.service
+```
 
+Enter in fllowing content:
 
+```
 [Unit]
 Description=AmazingPi Service
 Wants=network-online.target
@@ -30,12 +28,22 @@ After=network-online.target
 Type=simple
 User=pi
 WorkingDirectory=/home/pi
-ExecStart=sh /home/pi/AmazingPi/start_amazing.sh >> /tmp/AmazingPi.log 2>&1
+ExecStart=sh /home/pi/AmazingPi/start_amazing.sh > /home/pi/AmazingPi.log
 
 [Install]
 WantedBy=multi-user.target
+```
 
+And run following commands to start service:
 
+```
 systemctl status amazingPi.service
 sudo systemctl enable amazingPi.service
 sudo systemctl start amazingPi.service
+```
+
+# Alternatively use crontab to shcedule
+```
+sudo crontab -e
+@reboot sh /home/pi/AmazingPi/start_amazing.sh >> /home/pi/AmazingPi.log 2>&1
+```
