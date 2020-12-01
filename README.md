@@ -48,8 +48,10 @@ sudo systemctl enable amazingPi.service
 sudo systemctl start amazingPi.service
 ```
 
-## You can edit the unit-file and show it. After editing you must restart the service to take effect.
+## Edit the unit-file
+You can edit the unit-file and show it. After editing you must restart the service to take effect.
 ```
+systemctl status amazingPi.service
 sudo systemctl edit --full amazingPi.service
 sudo systemctl restart amazingPi.service
 ```
